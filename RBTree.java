@@ -18,8 +18,7 @@ public class RBTree {
 	 	private int key;
 	 	private RBNode left,right,parent;
 	 	private boolean Red;
-	 	public RBNode()
-	 	{
+	 	public RBNode(){
 	 		parent=null;
 	 		this.val=null;
 	 		Red=false;
@@ -27,45 +26,37 @@ public class RBTree {
 	 		right=null;
 	 		this.key=-1;	
 	 	}
-	 	public RBNode(String val,int key,boolean isRed)
-	 	{
-	 		parent=null;
-	 		this.val=val;
-	 		Red=isRed;
-	 		left=null;
-	 		right=null;
-	 		this.key=key;
+	 	public RBNode(String val,int key,boolean isRed){
+	 		parent = null;
+	 		this.val = val;
+	 		Red = isRed;
+	 		left = null;
+	 		right = null;
+	 		this.key = key;
 	 	}
-	 	public void setLeft(RBNode l)
-	 	{
-	 		left=l;
-	 		if(l!=leaf)
+	 	public void setLeft(RBNode l){
+	 		left = l;
+	 		if(l != leaf)
 	 			l.parent=this;
 	 	}
-	 	public void setRight(RBNode r)
-	 	{
+	 	public void setRight(RBNode r){
 	 		right=r;
 	 		if(r!=leaf)
 	 			r.parent=this;
 	 	}
-	 	public void setRed(boolean red)
-	 	{
+	 	public void setRed(boolean red){
 	 		Red=red;
 	 	}
-	 	public void setVal(String Val)
-	 	{
+	 	public void setVal(String Val){
 	 		val=Val;
 	 	}
-	 	public void setParent(RBNode par)
-	 	{
+	 	public void setParent(RBNode par){
 	 		parent=par;
 	 	}
-	 	public RBNode getParent()
-	 	{
+	 	public RBNode getParent(){
 	 		return parent;
 	 	}
-	 	public String getVal()
-	 	{
+	 	public String getVal(){
 	 		return val;
 	 	}
 		public boolean isRed(){ return Red;}
