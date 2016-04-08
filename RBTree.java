@@ -50,7 +50,7 @@ public class RBTree {
   */
  public String search(int k)
  {
-	return "42";  // to be replaced by student code
+	return "pacman";  // to be replaced by student code
  }
 
  /**
