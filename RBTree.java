@@ -19,6 +19,7 @@ public class RBTree {
 		public RBNode getRight(){return null;}
 		public int getKey()
 		{return 42;}
+		asjdflkasjf;
 	}
 	
 /**
