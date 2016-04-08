@@ -39,6 +39,7 @@ public class RBTree {
   *
   */
  public boolean empty() {
+ 	system.out.println("no");
    return false; // to be replaced by student code
  }
 
