@@ -28,6 +28,7 @@ public class RBTree {
   *
   */
  public RBNode getRoot() {
+ 	System.out.println("hello");
    return null; // to be replaced by student code
  }
  
