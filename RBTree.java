@@ -83,13 +83,10 @@ public class RBTree {
 			}
 			return rot;
 		}
-		public static RBNode rotateL(RBNode rot)
-		{
-			if(rot.getRight()!=null&&rot.getRight()!=leaf&&rot!=leaf)
-			{
+		public static RBNode rotateL(RBNode rot){
+			if(rot.getRight()!=null&&rot.getRight()!=leaf&&rot!=leaf){
 				RBNode temp1=rot.getRight(),temp2=rot,temp3=rot.getParent(),temp4=rot.getRight().getLeft();
-				if(temp3!=null)
-				{
+				if(temp3!=null){
 					if(temp3.getLeft()==rot)
 						temp3.setLeft(temp1);
 					else
@@ -102,8 +99,7 @@ public class RBTree {
 			}
 			return rot;
 		}
-		public boolean isLeftChild()
-		{
+		public boolean isLeftChild(){
 			if(parent==null)
 				return false;
 			return parent.getLeft()==this;
@@ -139,13 +135,11 @@ public class RBTree {
   * returns the value of an item with key k if it exists in the tree
   * otherwise, returns null
   */
- public String search(int k)
- {
+ public String search(int k){
 	if(empty())
 		return null;
 	RBNode x=getRoot();
-	while(x!=null&&x!=leaf)
-	{
+	while(x!=null&&x!=leaf){
 		if(x.getKey()==k)
 			return x.getVal();
 		if(k<x.getKey())
@@ -166,8 +160,7 @@ public class RBTree {
   * returns -1 if an item with key k already exists in the tree.
   */
   public int insert(int k, String v) {
-	  if(empty())
-	  {
+	  if(empty()){
 		  
 		  root=new RBNode(v,k,true);
 		  root.setLeft(leaf);
@@ -175,18 +168,15 @@ public class RBTree {
 		  return fixInsert(root);
 	  }
 	  RBNode x=this.root;
-	  while(true)
-	  {
+	  while(true){
 		  if(x.key==k)
 			  return -1;
-		  if(x.key>k)
-		  {
+		  if(x.key>k){
 			  if(x.getLeft()==leaf)
 				  break;
 			  x=x.getLeft();
 		  }
-		  else
-		  {
+		  else{
 			  if(x.getRight()==leaf)
 				  break;
 			  x=x.getRight();
@@ -201,12 +191,9 @@ public class RBTree {
 		  x.setRight(New);
 	  return fixInsert(New);
   }
-  public int fixInsert(RBNode x)
-  {
-	  if(x.isRed())
-	  {
-		  if(x.getParent()==null)
-		  {
+  public int fixInsert(RBNode x){
+	  if(x.isRed()){
+		  if(x.getParent()==null){
 			  root=x;
 			  x.setRed(false);
 			  return 1;
