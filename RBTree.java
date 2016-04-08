@@ -18,8 +18,12 @@ public class RBTree {
 	 	private int key;
 	 	private RBNode left,right,parent;
 	 	private boolean Red;
+<<<<<<< HEAD
+	 	public RBNode(){
+=======
 	 	public RBNode()
 	 	{
+>>>>>>> master
 	 		parent=null;
 	 		this.val=null;
 	 		Red=false;
@@ -27,6 +31,22 @@ public class RBTree {
 	 		right=null;
 	 		this.key=-1;	
 	 	}
+<<<<<<< HEAD
+	 	public RBNode(String val,int key,boolean isRed){
+	 		parent = null;
+	 		this.val = val;
+	 		Red = isRed;
+	 		left = null;
+	 		right = null;
+	 		this.key = key;
+	 	}
+	 	public void setLeft(RBNode l){
+	 		left = l;
+	 		if(l != leaf)
+	 			l.parent=this;
+	 	}
+	 	public void setRight(RBNode r){
+=======
 	 	public RBNode(String val,int key,boolean isRed)
 	 	{
 	 		parent=null;
@@ -44,10 +64,26 @@ public class RBTree {
 	 	}
 	 	public void setRight(RBNode r)
 	 	{
+>>>>>>> master
 	 		right=r;
 	 		if(r!=leaf)
 	 			r.parent=this;
 	 	}
+<<<<<<< HEAD
+	 	public void setRed(boolean red){
+	 		Red=red;
+	 	}
+	 	public void setVal(String Val){
+	 		val=Val;
+	 	}
+	 	public void setParent(RBNode par){
+	 		parent=par;
+	 	}
+	 	public RBNode getParent(){
+	 		return parent;
+	 	}
+	 	public String getVal(){
+=======
 	 	public void setRed(boolean red)
 	 	{
 	 		Red=red;
@@ -66,6 +102,7 @@ public class RBTree {
 	 	}
 	 	public String getVal()
 	 	{
+>>>>>>> master
 	 		return val;
 	 	}
 		public boolean isRed(){ return Red;}
@@ -92,6 +129,12 @@ public class RBTree {
 			}
 			return rot;
 		}
+<<<<<<< HEAD
+		public static RBNode rotateL(RBNode rot){
+			if(rot.getRight()!=null&&rot.getRight()!=leaf&&rot!=leaf){
+				RBNode temp1=rot.getRight(),temp2=rot,temp3=rot.getParent(),temp4=rot.getRight().getLeft();
+				if(temp3!=null){
+=======
 		public static RBNode rotateL(RBNode rot)
 		{
 			if(rot.getRight()!=null&&rot.getRight()!=leaf&&rot!=leaf)
@@ -99,6 +142,7 @@ public class RBTree {
 				RBNode temp1=rot.getRight(),temp2=rot,temp3=rot.getParent(),temp4=rot.getRight().getLeft();
 				if(temp3!=null)
 				{
+>>>>>>> master
 					if(temp3.getLeft()==rot)
 						temp3.setLeft(temp1);
 					else
@@ -111,8 +155,12 @@ public class RBTree {
 			}
 			return rot;
 		}
+<<<<<<< HEAD
+		public boolean isLeftChild(){
+=======
 		public boolean isLeftChild()
 		{
+>>>>>>> master
 			if(parent==null)
 				return false;
 			return parent.getLeft()==this;
@@ -148,6 +196,13 @@ public class RBTree {
   * returns the value of an item with key k if it exists in the tree
   * otherwise, returns null
   */
+<<<<<<< HEAD
+ public String search(int k){
+	if(empty())
+		return null;
+	RBNode x=getRoot();
+	while(x!=null&&x!=leaf){
+=======
  public String search(int k)
  {
 	if(empty())
@@ -155,6 +210,7 @@ public class RBTree {
 	RBNode x=getRoot();
 	while(x!=null&&x!=leaf)
 	{
+>>>>>>> master
 		if(x.getKey()==k)
 			return x.getVal();
 		if(k<x.getKey())
@@ -175,8 +231,12 @@ public class RBTree {
   * returns -1 if an item with key k already exists in the tree.
   */
   public int insert(int k, String v) {
+<<<<<<< HEAD
+	  if(empty()){
+=======
 	  if(empty())
 	  {
+>>>>>>> master
 		  
 		  root=new RBNode(v,k,true);
 		  root.setLeft(leaf);
@@ -184,18 +244,29 @@ public class RBTree {
 		  return fixInsert(root);
 	  }
 	  RBNode x=this.root;
+<<<<<<< HEAD
+	  while(true){
+		  if(x.key==k)
+			  return -1;
+		  if(x.key>k){
+=======
 	  while(true)
 	  {
 		  if(x.key==k)
 			  return -1;
 		  if(x.key>k)
 		  {
+>>>>>>> master
 			  if(x.getLeft()==leaf)
 				  break;
 			  x=x.getLeft();
 		  }
+<<<<<<< HEAD
+		  else{
+=======
 		  else
 		  {
+>>>>>>> master
 			  if(x.getRight()==leaf)
 				  break;
 			  x=x.getRight();
@@ -210,12 +281,18 @@ public class RBTree {
 		  x.setRight(New);
 	  return fixInsert(New);
   }
+<<<<<<< HEAD
+  public int fixInsert(RBNode x){
+	  if(x.isRed()){
+		  if(x.getParent()==null){
+=======
   public int fixInsert(RBNode x)
   {
 	  if(x.isRed())
 	  {
 		  if(x.getParent()==null)
 		  {
+>>>>>>> master
 			  root=x;
 			  x.setRed(false);
 			  return 1;
