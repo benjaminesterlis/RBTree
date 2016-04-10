@@ -18,8 +18,7 @@ public class RBTree {
 	 	private int key;
 	 	private RBNode left,right,parent;
 	 	private boolean Red;
-	 	public RBNode()
-	 	{
+	 	public RBNode(){
 	 		parent=null;
 	 		this.val=null;
 	 		Red=false;
